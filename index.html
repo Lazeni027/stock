@@ -1,666 +1,686 @@
 ﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-    <title>Stock-Nova · Logiciel de gestion</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css">
-    
-  
-</head>
-<body>
-
-    <!-- ===== HEADER ===== -->
-    <header class="app-header" id="appHeader">
-        <div class="logo" onclick="window.location.reload()">
-            <div class="logo-icon"><i class="fas fa-cubes"></i></div>
-            <div class="logo-text">Stock<span>Nova</span></div>
-        </div>
-
-        <nav class="desktop-nav" aria-label="Navigation principale">
-            <a href="#" onclick="showSection('home')">Accueil</a>
-            <a href="#" onclick="showSection('about')">À propos</a>
-            <a href="#" onclick="showSection('services')">Services</a>
-            <a href="#" onclick="showSection('pricing')">Tarifs</a>
-            <a href="#" onclick="showSection('contact')" class="nav-cta">Contact</a>
-        </nav>
-
-        <div class="burger-wrapper">
-            <button class="burger-menu" id="burgerBtn" aria-label="Ouvrir le menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
-
-    <!-- ===== OVERLAY & PANEL ===== -->
-    <div class="menu-overlay" id="menuOverlay"></div>
-    <div class="menu-panel" id="menuPanel">
-        <div class="menu-header">
-            <span class="logo-text" style="font-size:1.1rem;">Stock<span>Nova</span></span>
-            <button class="close-btn" id="closeMenu" aria-label="Fermer le menu">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="menu-title">Navigation</div>
-        <a href="#" onclick="showSection('home')"><i class="fas fa-home"></i> Accueil</a>
-        <a href="#" onclick="showSection('about')"><i class="fas fa-info-circle"></i> À propos</a>
-        <a href="#" onclick="showSection('services')"><i class="fas fa-th-large"></i> Nos services</a>
-        <a href="#" onclick="showSection('howto')"><i class="fas fa-rocket"></i> Comment obtenir</a>
-        <a href="#" onclick="showSection('contact')"><i class="fas fa-phone-alt"></i> Contact</a>
-        <a href="#" onclick="showSection('register')"><i class="fas fa-user-plus"></i> Inscription</a>
-        <a href="#" onclick="showSection('register')" class="menu-cta">
-            <i class="fas fa-rocket"></i> Essayer gratuitement
-        </a>
-        <div class="menu-footer">
-            <div class="socials">
-                <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <div class="menu-version">v2.4 · © 2024 Stock-Nova</div>
-        </div>
-    </div>
-
-    <!-- ===== PAGE ===== -->
-    <main class="page" id="app">
-
-        <div class="local-badge">
-            <i class="fas fa-map-marker-alt"></i> Korhogo, Côte d'Ivoire · Disponible partout en CI
-        </div>
-
-        <!-- ===== SECTION ACCUEIL ===== -->
-        <div id="section-home">
-            <div class="hero">
-                <div class="intro">
-                    <h1>Commandez<br>à distance,<br><span>sans friction.</span></h1>
-                    <p>Une plateforme pensée pour les commerces qui veulent piloter leurs ventes, leur stock et leur équipe depuis n'importe où. Multi-utilisateurs, accès dédiés, supervision simple et performance marketing dès la première semaine.</p>
-                </div>
-
-                <div class="hero-panel" aria-label="Vue d'ensemble StockNova">
-                    <div class="dashboard-top">
-                        <span class="pill"><span class="dot"></span> En ligne</span>
-                        <span class="pill">+28% ce mois</span>
-                    </div>
-                    <div class="metrics-grid">
-                        <div class="metric">
-                            <span class="label">Commandes</span>
-                            <strong>4.8M</strong>
-                            <small>+12.5%</small>
-                        </div>
-                        <div class="metric">
-                            <span class="label">Utilisateurs</span>
-                            <strong>24</strong>
-                            <small>7 équipes</small>
-                        </div>
-                        <div class="metric">
-                            <span class="label">Accès</span>
-                            <strong>3 niveaux</strong>
-                            <small>sécurisé</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="marketing-strip" aria-label="Message marketing clé">
-                <div class="tag"><i class="fas fa-gem"></i> Personnalisation offerte</div>
-                <div class="marketing-points">
-                    <span><strong>« Votre boutique, votre nom, votre logiciel. »</strong></span>
-                    <span class="highlight">On personnalise tout pour vous, gratuitement</span>
-                </div>
-            </div>
-
-            <div class="split-showcase">
-                <div class="showcase-visual">
-                    <div class="showcase-image"></div>
-                    <div class="showcase-stack">
-                        <div class="showcase-card">
-                            <h4>Suivi commerce</h4>
-                            <div class="mini-list">
-                                <div class="mini-item"><strong>Ventes</strong><span></span></div>
-                                <div class="mini-item"><strong>Stock</strong><span></span></div>
-                                <div class="mini-item"><strong>Clients</strong><span></span></div>
-                            </div>
-                        </div>
-                        <div class="showcase-card">
-                            <h4>Accès contrôlé</h4>
-                            <div class="mini-list">
-                                <div class="mini-item"><strong>Manager</strong><span></span></div>
-                                <div class="mini-item"><strong>Vendeur</strong><span></span></div>
-                                <div class="mini-item"><strong>Comptable</strong><span></span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="split-copy">
-                    <div class="eyebrow"><i class="fas fa-bolt"></i> Plus de contrôle</div>
-                    <h3>Un système pensé pour agir vite, sans perdre la maîtrise.</h3>
-                    <p>Chaque utilisateur travaille avec des droits adaptés à son rôle, tandis que les gestionnaires centralisent les commandes, les stocks et les performances depuis un seul tableau.</p>
-                    <div class="cta-row">
-                        <button class="btn-primary" onclick="showSection('register')"><i class="fas fa-arrow-right"></i> Démarrer</button>
-                        <button class="btn-outline" onclick="showSection('howto')"><i class="fas fa-play"></i> Voir demo</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="gallery" aria-label="Fonctionnalités clés StockNova">
-                <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1556742393-d75f468bfcb0?w=800&h=600&fit=crop&crop=center');">
-                    <div class="overlay">Caisse</div>
-                </div>
-                <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop&crop=center');">
-                    <div class="overlay">Stock</div>
-                </div>
-                <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=800&h=600&fit=crop&crop=center');">
-                    <div class="overlay">Ventes</div>
-                </div>
-                <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=800&h=600&fit=crop&crop=center');">
-                    <div class="overlay">Commande à distance</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ===== SECTION SERVICES ===== -->
-        <div id="section-services" style="display:none;">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-cash-register"></i>
-                    <div class="name">Commandes à distance</div>
-                    <div class="desc">Validez les ventes, paiements et livraisons depuis n'importe où.</div>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-users-cog"></i>
-                    <div class="name">Multi-utilisateurs</div>
-                    <div class="desc">Ajoutez vos équipes, gestionnaires, vendeurs et comptables sans friction.</div>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <div class="name">Accès par profil</div>
-                    <div class="desc">Chaque utilisateur reçoit un accès clair, sécurisé et adapté à son rôle.</div>
-                </div>
-            </div>
-
-            <div class="hero-panel" aria-label="Dashboard marketing" style="margin-bottom:1.2rem;">
-                <div class="dashboard-top">
-                    <span class="pill"><span class="dot"></span> Suivi temps réel</span>
-                    <span class="pill">+41% de productivité</span>
-                </div>
-                <div class="chart-box">
-                    <div class="bars" aria-hidden="true" style="display:flex;gap:0.5rem;height:80px;align-items:end;padding:0.5rem 0;">
-                        <span style="flex:1;display:block;border-radius:8px 8px 0 0;background:linear-gradient(180deg,var(--primary),rgba(255,153,0,0.3));height:42%;"></span>
-                        <span style="flex:1;display:block;border-radius:8px 8px 0 0;background:linear-gradient(180deg,var(--primary),rgba(255,153,0,0.3));height:58%;"></span>
-                        <span style="flex:1;display:block;border-radius:8px 8px 0 0;background:linear-gradient(180deg,var(--primary),rgba(255,153,0,0.3));height:74%;"></span>
-                        <span style="flex:1;display:block;border-radius:8px 8px 0 0;background:linear-gradient(180deg,var(--primary),rgba(255,153,0,0.3));height:62%;"></span>
-                        <span style="flex:1;display:block;border-radius:8px 8px 0 0;background:linear-gradient(180deg,var(--primary),rgba(255,153,0,0.3));height:88%;"></span>
-                        <span style="flex:1;display:block;border-radius:8px 8px 0 0;background:linear-gradient(180deg,var(--primary),rgba(255,153,0,0.3));height:100%;"></span>
-                    </div>
-                </div>
-                <div class="metrics-grid">
-                    <div class="metric">
-                        <span class="label">Ventes</span>
-                        <strong>4.8M</strong>
-                        <small>+12.5%</small>
-                    </div>
-                    <div class="metric">
-                        <span class="label">Stock</span>
-                        <strong>99.3%</strong>
-                        <small>précis</small>
-                    </div>
-                    <div class="metric">
-                        <span class="label">Equipe</span>
-                        <strong>24</strong>
-                        <small>utilisateurs</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ===== SECTION ABOUT ===== -->
-        <div class="form-section" id="aboutSection" style="display:none;">
-            <h3><i class="fas fa-info-circle"></i> À propos de Stock-Nova</h3>
-            <p style="font-size:0.85rem;color:var(--text-soft);line-height:1.8;">
-                <strong>Stock-Nova</strong> est une solution innovante de gestion commerciale conçue pour les TPE et PME en Côte d'Ivoire.
-                Basée à Korhogo, nous accompagnons les commerçants dans la digitalisation de leurs opérations : ventes, stocks, rapports et suivi client.
-                Notre mission : simplifier la gestion pour vous permettre de vous concentrer sur votre cœur de métier.
-            </p>
-            <br />
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;font-size:0.8rem;color:var(--text-soft);">
-                <div><i class="fas fa-check-circle" style="color:var(--primary);"></i> Présent sur tout le territoire ivoirien</div>
-                <div><i class="fas fa-check-circle" style="color:var(--primary);"></i> Support client réactif</div>
-                <div><i class="fas fa-check-circle" style="color:var(--primary);"></i> Solutions adaptées à votre secteur</div>
-                <div><i class="fas fa-check-circle" style="color:var(--primary);"></i> Sécurité des données garantie</div>
-            </div>
-        </div>
-
-        <!-- ===== SECTION HOWTO ===== -->
-        <div class="form-section" id="howtoSection" style="display:none;">
-            <h3><i class="fas fa-rocket"></i> Comment obtenir Stock-Nova ?</h3>
-            <div style="margin-top:0.8rem;display:flex;flex-direction:column;gap:0.5rem;">
-                <div style="display:flex;align-items:center;gap:0.8rem;background:var(--primary-soft);padding:0.6rem 0.8rem;border-radius:12px;">
-                    <span style="background:var(--primary);color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.8rem;">1</span>
-                    <span style="font-weight:600;font-size:0.8rem;">Cliquez sur "S'inscrire"</span>
-                </div>
-                <div style="display:flex;align-items:center;gap:0.8rem;background:var(--primary-soft);padding:0.6rem 0.8rem;border-radius:12px;">
-                    <span style="background:var(--primary);color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.8rem;">2</span>
-                    <span style="font-weight:600;font-size:0.8rem;">Remplissez vos informations</span>
-                </div>
-                <div style="display:flex;align-items:center;gap:0.8rem;background:var(--primary-soft);padding:0.6rem 0.8rem;border-radius:12px;">
-                    <span style="background:var(--primary);color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.8rem;">3</span>
-                    <span style="font-weight:600;font-size:0.8rem;">Choisissez votre formule et commencez</span>
-                </div>
-                <div style="text-align:center;margin-top:0.3rem;font-size:0.7rem;color:var(--text-muted);">
-                    <i class="fas fa-headset"></i> Besoin d'aide ? Contactez-nous au <strong>+225 05 54 10 18 73</strong>
-                </div>
-            </div>
-        </div>
-
-        <!-- ===== SECTION PRICING ===== -->
-        <div class="pricing" id="pricingSection">
-            <div class="pricing-header">
-                <h3><i class="fas fa-tag"></i> Nos offres (CFA)</h3>
-                <div class="pricing-toggle">
-                    <button class="active" data-period="monthly">Mensuel</button>
-                    <button data-period="annual">Annuel</button>
-                </div>
-            </div>
-            <div class="pricing-plans" id="pricingPlans">
-                <div class="plan" data-period="monthly">
-                    <div class="name">Standard</div>
-                    <div class="price">5 000 <span>F/mois</span></div>
-                    <div class="features"><i class="fas fa-check"></i> Gestion complète</div>
-                </div>
-                <div class="plan popular" data-period="monthly">
-                    <div class="name">Pro</div>
-                    <div class="price">5 000 <span>F/mois</span></div>
-                    <div class="features"><i class="fas fa-check"></i> Tout + support prioritaire</div>
-                </div>
-                <div class="plan" data-period="annual" style="display:none;">
-                    <div class="name">Standard</div>
-                    <div class="price">50 000 <span>F/an</span></div>
-                    <div class="saving">Économisez 10 000 F</div>
-                    <div class="features"><i class="fas fa-check"></i> Gestion complète</div>
-                </div>
-                <div class="plan popular" data-period="annual" style="display:none;">
-                    <div class="name">Pro</div>
-                    <div class="price">50 000 <span>F/an</span></div>
-                    <div class="saving">Économisez 10 000 F</div>
-                    <div class="features"><i class="fas fa-check"></i> Tout + support prioritaire</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ===== SECTION CONTACT ===== -->
-        <div class="contact-info" id="section-contact">
-            <span class="item"><i class="fas fa-map-marker-alt"></i> Korhogo, Côte d'Ivoire</span>
-            <span class="item"><i class="fas fa-phone"></i> <a href="tel:+2250554101873">+225 05 54 10 18 73</a></span>
-            <span class="item"><i class="fas fa-envelope"></i> <a href="mailto:nstci2025@gmail.com">nstci2025@gmail.com</a></span>
-            <span class="item"><i class="fas fa-globe"></i> <a href="https://stock-nova.ci" target="_blank">stock-nova.ci</a></span>
-        </div>
-
-        <!-- ===== FORMULAIRE D'INSCRIPTION ===== -->
-        <div class="form-section" id="registerForm">
-            <h3><i class="fas fa-user-plus"></i> Inscription</h3>
-            <div class="sub">Créez votre compte en quelques secondes</div>
-            <form id="signupForm" onsubmit="handleSubmit(event)">
-                <div class="form-group">
-                    <label>Informations de l'entreprise</label>
-                    <input type="text" name="company" placeholder="Nom de l'entreprise" required />
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="text" name="sector" placeholder="Secteur d'activité" />
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="city" placeholder="Ville" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Informations du responsable</label>
-                    <input type="text" name="contact" placeholder="Nom complet du responsable" required />
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Email professionnel" required />
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" name="phone" placeholder="Téléphone" required />
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="password" name="password" placeholder="Mot de passe" required />
-                    </div>
-                    <div class="form-group">
-                        <input type="password" name="confirmPassword" placeholder="Confirmer le mot de passe" required />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Message (optionnel)</label>
-                    <textarea name="message" placeholder="Informations complémentaires..."></textarea>
-                </div>
-                <button type="submit" class="btn-submit"><i class="fas fa-check-circle"></i> Créer mon compte</button>
-            </form>
-        </div>
-
-        <!-- ===== ACTIONS ===== -->
-        <div class="actions">
-            <button class="btn-primary" onclick="showSection('register')"><i class="fas fa-user-plus"></i> S'inscrire</button>
-            <button class="btn-secondary" onclick="showSection('contact')"><i class="fas fa-phone-alt"></i> Contacter</button>
-            <button class="btn-outline" onclick="showSection('howto')"><i class="fas fa-flask"></i> Essayer</button>
-        </div>
-
-        <!-- ===== FOOTER ===== -->
-        <footer class="app-footer">
-            <span>&copy; 2024 Stock-Nova. Tous droits réservés.</span>
-            <div class="socials">
-                <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-        </footer>
-
-    </main>
-
-    <!-- ===== TOAST ===== -->
-    <div class="toast" id="toast" aria-live="polite">
-        <i class="fas fa-check-circle"></i>
-        <span id="toastText">Enregistrement réussi.</span>
-    </div>
-
-    <script>
-        // ===== TOGGLE MENU =====
-        const burgerBtn = document.getElementById('burgerBtn');
-        const menuOverlay = document.getElementById('menuOverlay');
-        const menuPanel = document.getElementById('menuPanel');
-        const closeMenu = document.getElementById('closeMenu');
-
-        function toggleMenu(open) {
-            burgerBtn.classList.toggle('active', open);
-            menuOverlay.classList.toggle('open', open);
-            menuPanel.classList.toggle('open', open);
-            document.body.style.overflow = open ? 'hidden' : '';
-        }
-
-        burgerBtn.addEventListener('click', () => toggleMenu(true));
-        menuOverlay.addEventListener('click', () => toggleMenu(false));
-        closeMenu.addEventListener('click', () => toggleMenu(false));
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && menuPanel.classList.contains('open')) {
-                toggleMenu(false);
-            }
-        });
-
-        // ===== SCROLL EFFECT =====
-        const header = document.getElementById('appHeader');
-        window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.pageYOffset > 30);
-        });
-
-        // ===== SECTION NAVIGATION =====
-        function showSection(sectionId) {
-            // Cacher toutes les sections
-            document.querySelectorAll('#section-home, #section-services, #aboutSection, #howtoSection, #registerForm')
-                .forEach(el => {
-                    if (el.id === 'registerForm') {
-                        el.classList.remove('open');
-                    } else {
-                        el.style.display = 'none';
-                    }
-                });
-
-            // Réafficher les éléments communs
-            document.querySelectorAll('.gallery, .features-grid, .actions, .pricing, .contact-info')
-                .forEach(el => {
-                    if (!el.closest('.form-section') && !el.closest('#section-services')) {
-                        el.style.display = '';
-                    }
-                });
-
-            const homeSection = document.getElementById('section-home');
-            const servicesSection = document.getElementById('section-services');
-            const aboutSection = document.getElementById('aboutSection');
-            const howtoSection = document.getElementById('howtoSection');
-            const registerForm = document.getElementById('registerForm');
-
-            switch (sectionId) {
-                case 'home':
-                    homeSection.style.display = 'block';
-                    servicesSection.style.display = 'none';
-                    aboutSection.style.display = 'none';
-                    howtoSection.style.display = 'none';
-                    registerForm.classList.remove('open');
-                    document.querySelectorAll('.gallery, .features-grid, .actions, .pricing, .contact-info')
-                        .forEach(el => el.style.display = '');
-                    break;
-
-                case 'services':
-                    homeSection.style.display = 'none';
-                    servicesSection.style.display = 'block';
-                    aboutSection.style.display = 'none';
-                    howtoSection.style.display = 'none';
-                    registerForm.classList.remove('open');
-                    document.querySelectorAll('.gallery, .actions, .pricing, .contact-info')
-                        .forEach(el => el.style.display = '');
-                    document.querySelector('.features-grid').style.display = '';
-                    break;
-
-                case 'about':
-                    homeSection.style.display = 'none';
-                    servicesSection.style.display = 'none';
-                    aboutSection.style.display = 'block';
-                    howtoSection.style.display = 'none';
-                    registerForm.classList.remove('open');
-                    document.querySelectorAll('.gallery, .features-grid, .actions, .pricing')
-                        .forEach(el => el.style.display = 'none');
-                    document.querySelector('.contact-info').style.display = '';
-                    break;
-
-                case 'howto':
-                    homeSection.style.display = 'none';
-                    servicesSection.style.display = 'none';
-                    aboutSection.style.display = 'none';
-                    howtoSection.style.display = 'block';
-                    registerForm.classList.remove('open');
-                    document.querySelectorAll('.gallery, .features-grid, .actions, .pricing')
-                        .forEach(el => el.style.display = 'none');
-                    document.querySelector('.contact-info').style.display = '';
-                    break;
-
-                case 'contact':
-                    homeSection.style.display = 'none';
-                    servicesSection.style.display = 'none';
-                    aboutSection.style.display = 'none';
-                    howtoSection.style.display = 'none';
-                    registerForm.classList.remove('open');
-                    document.querySelectorAll('.gallery, .features-grid, .actions, .pricing')
-                        .forEach(el => el.style.display = 'none');
-                    document.querySelector('.contact-info').style.display = '';
-                    document.querySelector('.contact-info').scrollIntoView({ behavior: 'smooth' });
-                    break;
-
-                case 'register':
-                    homeSection.style.display = 'none';
-                    servicesSection.style.display = 'none';
-                    aboutSection.style.display = 'none';
-                    howtoSection.style.display = 'none';
-                    registerForm.classList.add('open');
-                    document.querySelectorAll('.gallery, .features-grid, .actions, .pricing')
-                        .forEach(el => el.style.display = 'none');
-                    document.querySelector('.contact-info').style.display = '';
-                    registerForm.scrollIntoView({ behavior: 'smooth' });
-                    break;
-
-                case 'pricing':
-                    homeSection.style.display = 'block';
-                    servicesSection.style.display = 'none';
-                    aboutSection.style.display = 'none';
-                    howtoSection.style.display = 'none';
-                    registerForm.classList.remove('open');
-                    document.querySelectorAll('.gallery, .features-grid, .actions, .pricing, .contact-info')
-                        .forEach(el => el.style.display = '');
-                    document.querySelector('.pricing').scrollIntoView({ behavior: 'smooth' });
-                    break;
-
-                default:
-                    homeSection.style.display = 'block';
-            }
-
-            // Fermer le menu après navigation
-            toggleMenu(false);
-        }
-
-        // ===== PRICING TOGGLE =====
-        const toggleBtns = document.querySelectorAll('.pricing-toggle button');
-        const plans = document.querySelectorAll('.plan');
-
-        function showPeriod(period) {
-            plans.forEach(plan => {
-                plan.style.display = (plan.dataset.period === period) ? 'block' : 'none';
-            });
-        }
-
-        toggleBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                toggleBtns.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                showPeriod(this.dataset.period);
-            });
-        });
-        showPeriod('monthly');
-
-        // ===== TOAST =====
-        const toast = document.getElementById('toast');
-        const toastText = document.getElementById('toastText');
-        let toastTimer;
-
-        function showToast(message, isError = false) {
-            toastText.textContent = message;
-            toast.style.borderColor = isError ? '#dc2626' : 'rgba(255,255,255,0.07)';
-            toast.querySelector('i').style.color = isError ? '#dc2626' : '#059669';
-            toast.classList.add('show');
-            clearTimeout(toastTimer);
-            toastTimer = setTimeout(() => toast.classList.remove('show'), 3000);
-        }
-
-        // ===== FORMULAIRE DE CONTACT =====
-        function handleSubmit(event) {
-            event.preventDefault();
-            const form = event.target;
-            const btn = form.querySelector('.btn-submit');
-            const originalHTML = btn.innerHTML;
-
-            // Récupération des données
-            const formData = new FormData(form);
-            const data = {
-                company: formData.get('company') || 'Non renseigné',
-                sector: formData.get('sector') || 'Non renseigné',
-                city: formData.get('city') || 'Non renseigné',
-                contact: formData.get('contact') || 'Non renseigné',
-                email: formData.get('email') || 'Non renseigné',
-                phone: formData.get('phone') || 'Non renseigné',
-                message: formData.get('message') || 'Aucun message',
-                timestamp: new Date().toISOString(),
-                source: 'stocknova-landing'
-            };
-
-            // Vérification des mots de passe
-            const password = formData.get('password');
-            const confirmPassword = formData.get('confirmPassword');
-            if (password && confirmPassword && password !== confirmPassword) {
-                showToast('Les mots de passe ne correspondent pas.', true);
-                return;
-            }
-
-            // Sauvegarde dans localStorage
-            try {
-                const existing = JSON.parse(localStorage.getItem('stocknova-registrations') || '[]');
-                existing.push(data);
-                localStorage.setItem('stocknova-registrations', JSON.stringify(existing));
-                localStorage.setItem('stocknova-last-submission', JSON.stringify(data));
-            } catch (e) {
-                console.warn('Erreur de sauvegarde:', e);
-            }
-
-            // Envoi vers un webhook (simulé)
-            btn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Envoi en cours...';
-            btn.disabled = true;
-
-            // Simuler un envoi API
-            setTimeout(() => {
-                // Afficher les données dans la console
-                console.log('📦 Données d\'inscription collectées :', data);
-
-                // Afficher un résumé dans la console
-                console.log('%c📊 RÉCAPITULATIF DES DONNÉES', 'font-size:16px;font-weight:bold;color:#ff9900;');
-                console.table({
-                    'Entreprise': data.company,
-                    'Secteur': data.sector,
-                    'Ville': data.city,
-                    'Responsable': data.contact,
-                    'Email': data.email,
-                    'Téléphone': data.phone,
-                    'Message': data.message || '(aucun)',
-                    'Date': new Date(data.timestamp).toLocaleString('fr-FR')
-                });
-
-                // Sauvegarde en session pour récupération ultérieure
-                sessionStorage.setItem('stocknova-current-data', JSON.stringify(data));
-
-                showToast('🎉 Inscription enregistrée avec succès !');
-
-                btn.innerHTML = '<i class="fas fa-check-circle"></i> Compte créé !';
-                btn.style.background = '#059669';
-
-                setTimeout(() => {
-                    btn.innerHTML = originalHTML;
-                    btn.style.background = '';
-                    btn.disabled = false;
-                    form.reset();
-                    // Retour à l'accueil après inscription
-                    setTimeout(() => showSection('home'), 500);
-                }, 2000);
-
-            }, 1500);
-        }
-
-        // ===== EXPOSER LES DONNÉES COLLECTÉES (pour debug) =====
-        window.getStockNovaData = function() {
-            const data = localStorage.getItem('stocknova-registrations');
-            if (data) {
-                console.log('📋 Données stockées :', JSON.parse(data));
-                return JSON.parse(data);
-            }
-            console.log('Aucune donnée trouvée.');
-            return [];
-        };
-
-        window.clearStockNovaData = function() {
-            if (confirm('Supprimer toutes les données enregistrées ?')) {
-                localStorage.removeItem('stocknova-registrations');
-                localStorage.removeItem('stocknova-last-submission');
-                sessionStorage.removeItem('stocknova-current-data');
-                console.log('🗑️ Données supprimées.');
-                showToast('Données effacées.');
-            }
-        };
-
-        // ===== DÉMARRAGE =====
-        showSection('home');
-
-        // Afficher un message de bienvenue dans la console
-        console.log('%c🚀 Stock-Nova · Gestion intelligente', 'font-size:20px;font-weight:bold;color:#ff9900;');
-        console.log('%c📞 Contact: +225 05 54 10 18 73', 'font-size:12px;color:#4b5563;');
-        console.log('%c📧 Email: nstci2025@gmail.com', 'font-size:12px;color:#4b5563;');
-        console.log('%c🌐 Site: stock-nova.ci', 'font-size:12px;color:#4b5563;');
-        console.log('%c💡 Utilisez getStockNovaData() pour voir les inscriptions', 'font-size:12px;color:#6b7a8a;');
-        console.log('%c💡 Utilisez clearStockNovaData() pour effacer les données', 'font-size:12px;color:#6b7a8a;');
-    </script>
-
-</body>
-</html>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StockNova | Gérez votre commerce simplement</title>
+<meta name="description" content="StockNova aide les commerces à gérer leurs produits, stocks, ventes, dépenses et personnel. Demandez une présentation sur WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root
+{
+    --navy:#052f78;
+    --blue:#0649aa;
+    --blue2:#1262d2;
+    --yellow:#ffca28;
+    --ink:#142c49;
+    --muted:#5d6f85;
+    --pale:#f2f7ff;
+    --line:#dce7f4;
+    --radius:22px
+}
+*
+{
+    box-sizing:border-box
+}
+html
+{
+    scroll-behavior:smooth
+}
+body
+{
+    margin:0;
+    font-family:Roboto,Arial,sans-serif;
+    color:var(--ink);
+    line-height:1.6;
+    background:#fff
+}
+a
+{
+    text-decoration:none;
+    color:inherit
+}
+.wrap
+{
+    width:min(1160px,92%);
+    margin:auto
+}
+.top
+{
+    background:#04275f;
+    color:#dce9ff;
+    font-size:13px;
+    padding:8px 0
+}
+.top .wrap
+{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    flex-wrap:wrap
+}
+.nav
+{
+    position:sticky;
+    top:0;
+    z-index:9;
+    background:var(--navy);
+    color:white;
+    border-bottom:1px solid #174b94
+}
+.navin
+{
+    height:74px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px
+}
+.logo
+{
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:-.7px
+}
+.logo span
+{
+    color:var(--yellow)
+}
+.tagline
+{
+    font-size:12px;
+    color:#d7e7ff;
+    font-weight:400;
+    display:block;
+    line-height:1
+}
+.links
+{
+    display:flex;
+    align-items:center;
+    gap:24px;
+    font-weight:500;
+    font-size:14px
+}
+.links a:hover
+{
+    color:var(--yellow)
+}
+.btn
+{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:13px 20px;
+    border-radius:12px;
+    font-weight:700;
+    transition:.2s;
+    border:2px solid transparent
+}
+.btn:hover
+{
+    transform:translateY(-2px)
+}
+.yellow
+{
+    background:var(--yellow);
+    color:#102747
+}
+.blue
+{
+    background:var(--blue);
+    color:#fff
+}
+.outline
+{
+    border-color:#bfd2e9;
+    color:var(--navy);
+    background:white
+}
+.hero
+{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(130deg,#052d72,#0752b9);
+    color:white;
+    padding:62px 0 56px
+}
+.hero:before
+{
+    content:"";
+    position:absolute;
+    left:-220px;
+    bottom:-310px;
+    width:600px;
+    height:600px;
+    border:80px solid rgba(255,202,40,.13);
+    border-radius:50%
+}
+.heroGrid
+{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:38px;
+    align-items:center;
+    position:relative
+}
+.kicker
+{
+    display:inline-block;
+    color:var(--yellow);
+    border:1px solid #5278b4;
+    background:rgba(255,202,40,.1);
+    padding:7px 13px;
+    border-radius:30px;
+    font-weight:700;
+    font-size:13px
+}
+.head .kicker,.whyText .kicker
+{
+    color:#073b87;
+    background:#fff3c2;
+    border-color:#f0c21c
+}
+h1
+{
+    font-size:clamp(36px,5vw,59px);
+    line-height:1.1;
+    letter-spacing:-1.6px;
+    margin:18px 0 15px
+}
+h1 strong
+{
+    color:var(--yellow)
+}
+.hero p
+{
+    font-size:18px;
+    color:#e0ecff;
+    max-width:560px
+}
+.actions
+{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin:25px 0
+}
+.heroImg
+{
+    border:3px solid var(--yellow);
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 24px 50px #001d4b66
+}
+.heroImg img
+{
+    width:100%;
+    display:block
+}
+.heroNotes
+{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:22px
+}
+.note
+{
+    font-size:14px;
+    color:#f0f6ff;
+    border-left:3px solid var(--yellow);
+    padding-left:9px
+}
+.section
+{
+    padding:72px 0
+}
+.light
+{
+    background:var(--pale)
+}
+.head
+{
+    text-align:center;
+    max-width:760px;
+    margin:0 auto 40px
+}
+.head h2
+{
+    font-size:clamp(28px,3.5vw,40px);
+    line-height:1.2;
+    color:var(--navy);
+    margin:12px 0
+}
+.head p
+{
+    color:var(--muted);
+    margin:0
+}
+.head p:empty
+{
+    display:none
+}
+.features
+{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:22px
+}
+.feature
+{
+    border:1px solid var(--line);
+    border-radius:20px;
+    background:white;
+    display:grid;
+    grid-template-columns:100px 1fr;
+    gap:18px;
+    padding:22px;
+    box-shadow:0 9px 25px #0a3a7608
+}
+.num
+{
+    width:46px;
+    height:46px;
+    background:var(--yellow);
+    color:var(--navy);
+    border-radius:12px;
+    display:grid;
+    place-items:center;
+    font-size:20px;
+    font-weight:900;
+    margin-bottom:12px
+}
+.feature h3
+{
+    color:var(--navy);
+    font-size:20px;
+    margin:0 0 5px
+}
+.feature p
+{
+    margin:0 0 8px;
+    color:var(--muted)
+}
+.feature ul
+{
+    padding-left:18px;
+    margin:6px 0;
+    color:#3b5069;
+    font-size:14px
+}
+.feature li
+{
+    margin:4px 0
+}
+.featureCopy
+{
+    grid-column:2
+}
+.functionTitle
+{
+    display:flex;
+    gap:12px;
+    align-items:center
+}
+.functionTitle .num
+{
+    flex-shrink:0;
+    margin:0
+}
+.feature:first-child,.feature:nth-child(2),.feature:nth-child(3),.feature:nth-child(4)
+{
+    min-height:190px
+}
+.sectors
+{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px
+}
+.sector
+{
+    position:relative;
+    overflow:hidden;
+    border-radius:22px;
+    border:3px solid white;
+    box-shadow:0 10px 30px #082c6815;
+    aspect-ratio:1/1;
+    background:#e8f0f9
+}
+.sector img
+{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block
+}
+.sectorLabel
+{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    padding:15px 18px;
+    background:linear-gradient(transparent,#052b67e8);
+    color:white
+}
+.sectorLabel h3
+{
+    margin:0;
+    font-size:23px
+}
+.sectorLabel p
+{
+    margin:2px 0 0;
+    font-size:14px;
+    color:#f2f7ff
+}
+.sectorLabel h3:after
+{
+    content:"";
+    display:inline-block;
+    width:22px;
+    height:4px;
+    background:var(--yellow);
+    margin-left:8px;
+    vertical-align:middle;
+    border-radius:4px
+}
+.why
+{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:26px;
+    align-items:center
+}
+.whyPanel
+{
+    background:linear-gradient(135deg,#06317b,#0752b8);
+    border-radius:24px;
+    padding:32px;
+    color:white
+}
+.whyPanel h2
+{
+    font-size:32px;
+    line-height:1.2;
+    margin:0 0 12px
+}
+.whyPanel p
+{
+    color:#d9e8ff
+}
+.plainList
+{
+    list-style:none;
+    padding:0;
+    margin:18px 0 0
+}
+.plainList li
+{
+    margin:12px 0;
+    padding-left:34px;
+    position:relative
+}
+.plainList li:before
+{
+    content:"";
+    position:absolute;
+    left:0;
+    top:8px;
+    width:14px;
+    height:14px;
+    background:var(--yellow);
+    border-radius:3px
+}
+.whyText h2
+{
+    font-size:31px;
+    line-height:1.2;
+    color:var(--navy);
+    margin:0 0 12px
+}
+.whyText p
+{
+    color:var(--muted)
+}
+.benefits
+{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-top:30px
+}
+.benefit
+{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:20px
+}
+.benefit h3
+{
+    color:var(--blue);
+    margin:0 0 5px;
+    font-size:17px
+}
+.benefit p
+{
+    margin:0;
+    color:var(--muted);
+    font-size:14px
+}
+.steps
+{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px
+}
+.step
+{
+    background:white;
+    border:1px solid var(--line);
+    padding:24px;
+    border-radius:18px
+}
+.stepNum
+{
+    font-size:28px;
+    font-weight:900;
+    color:var(--blue)
+}
+.step h3
+{
+    margin:5px 0;
+    color:var(--navy)
+}
+.step p
+{
+    color:var(--muted);
+    font-size:15px;
+    margin:0
+}
+.cta
+{
+    padding:58px 0
+}
+.ctaBox
+{
+    background:linear-gradient(115deg,#052e75,#0752b9);
+    border-radius:25px;
+    padding:40px;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+    position:relative;
+    overflow:hidden
+}
+.ctaBox h2
+{
+    font-size:32px;
+    line-height:1.2;
+    margin:0 0 8px
+}
+.ctaBox p
+{
+    color:#e1edff;
+    margin:0
+}
+.ctaBox .btn
+{
+    position:relative;
+    white-space:nowrap;
+    z-index:1
+}
+.footer
+{
+    background:#05275f;
+    color:white;
+    padding:30px 0
+}
+.footRow
+{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    align-items:center;
+    flex-wrap:wrap
+}
+.footRow small
+{
+    color:#c5d9f2
+}
+.floating
+{
+    position:fixed;
+    bottom:18px;
+    right:18px;
+    z-index:20;
+    background:var(--yellow);
+    color:var(--navy);
+    padding:13px 18px;
+    border-radius:40px;
+    font-weight:800;
+    box-shadow:0 10px 30px #0a326b33
+}
+@media(max-width:900px)
+{
+    .heroGrid,.why
+    {
+        grid-template-columns:1fr
+    }
+    .heroImg
+    {
+        max-width:680px;
+        margin:auto
+    }
+    .benefits
+    {
+        grid-template-columns:repeat(2,1fr)
+    }
+    .features
+    {
+        grid-template-columns:1fr
+    }
+    .navin
+    {
+        height:auto;
+        min-height:70px
+    }
+    .links
+    {
+        gap:12px
+    }
+}
+@media(max-width:620px)
+{
+    .links a:not(.navcta)
+    {
+        display:none
+    }
+    .navin
+    {
+        height:64px
+    }
+    .hero
+    {
+        padding:42px 0
+    }
+    .hero p
+    {
+        font-size:16px
+    }
+    h1
+    {
+        letter-spacing:-.8px
+    }
+    .section
+    {
+        padding:52px 0
+    }
+    .features,.sectors,.steps
+    {
+        grid-template-columns:1fr
+    }
+    .feature
+    {
+        grid-template-columns:1fr;
+        gap:8px
+    }
+    .featureCopy
+    {
+        grid-column:auto
+    }
+    .benefits
+    {
+        grid-template-columns:1fr
+    }
+    .ctaBox
+    {
+        display:block;
+        padding:28px
+    }
+    .ctaBox h2,.whyPanel h2
+    {
+        font-size:27px
+    }
+    .ctaBox .btn
+    {
+        margin-top:20px
+    }
+    .floating
+    {
+        bottom:12px;
+        right:12px;
+        font-size:14px;
+        padding:11px 15px
+    }
+}
+</style></head><body>
+<div class="top"><div class="wrap"><span>StockNova — Gestion commerciale simplifiée</span><span>Korhogo & Abidjan · Côte d’Ivoire</span></div></div>
+<header class="nav"><div class="wrap navin"><a class="logo" href="#accueil">Stock<span>Nova</span><span class="tagline">Gestion de Stock & Facturation</span></a><nav class="links"><a href="#accueil">Accueil</a><a href="#fonctionnalites">Fonctionnalités</a><a href="#secteurs">Activités</a><a href="#avantages">Avantages</a><a href="#contact" class="btn yellow navcta">Demander une démo</a></nav></div></header>
+<main>
+<section class="hero" id="accueil"><div class="wrap heroGrid"><div><span class="kicker">Gestion simple de votre activité</span><h1>Gérez votre commerce.<br><strong>Simplement.</strong></h1><p>Stock, ventes, dépenses et résultats : tout au même endroit.</p><div class="actions"><a class="btn yellow" href="https://wa.me/2250554101873?text=Bonjour%2C%20je%20souhaite%20une%20demonstration%20de%20StockNova." target="_blank" rel="noopener">Demander une démo WhatsApp</a><a class="btn outline" href="#fonctionnalites">Voir les fonctionnalités</a></div><div class="heroNotes"><span class="note">Facile à utiliser</span><span class="note">Pour votre commerce</span><span class="note">Accompagnement</span></div></div><div class="heroImg"><img src="hero-stocknova.png" alt="Commerçante utilisant StockNova sur une tablette dans sa boutique"></div></div></section>
+<section class="section" id="fonctionnalites"><div class="wrap"><div class="head"><span class="kicker">Fonctionnalités</span><h2>Tout pour gérer votre activité</h2><p>Les outils essentiels, simplement.</p></div><div class="features">
+<article class="feature"><div><div class="num">01</div></div><div class="featureCopy"><h3>Enregistrer vos produits</h3><p>Enregistrez vos articles et leurs informations.</p><ul><li>Nom et prix</li><li>Quantité en stock</li><li>Catégories de produits</li></ul></div></article>
+<article class="feature"><div><div class="num">02</div></div><div class="featureCopy"><h3>Suivre votre stock</h3><p>Suivez les quantités restantes et les mouvements.</p><ul><li>Entrées de stock</li><li>Sorties et ventes</li><li>Repérer le stock bas</li></ul></div></article>
+<article class="feature"><div><div class="num">03</div></div><div class="featureCopy"><h3>Faire vos ventes et factures</h3><p>Enregistrez les ventes et remettez un reçu ou une facture.</p><ul><li>Enregistrer les ventes</li><li>Imprimer les reçus</li><li>Historique des ventes</li></ul></div></article>
+<article class="feature"><div><div class="num">04</div></div><div class="featureCopy"><h3>Suivre vos dépenses</h3><p>Notez et consultez vos dépenses.</p><ul><li>Enregistrer vos dépenses</li><li>Consulter les achats</li><li>Suivre vos charges</li></ul></div></article>
+<article class="feature"><div><div class="num">05</div></div><div class="featureCopy"><h3>Gérer vos clients et employés</h3><p>Retrouvez les informations de vos clients et employés.</p><ul><li>Fiches clients</li><li>Suivi du personnel</li><li>Gestion des accès</li></ul></div></article>
+<article class="feature"><div><div class="num">06</div></div><div class="featureCopy"><h3>Voir vos résultats</h3><p>Consultez les chiffres clés de votre activité.</p><ul><li>Total des ventes</li><li>Dépenses enregistrées</li><li>Rapports pour décider</li></ul></div></article>
+</div></div></section>
+<section class="section light" id="secteurs"><div class="wrap"><div class="head"><span class="kicker">Pour votre métier</span><h2>Adapté à plusieurs activités</h2><p></p></div><div class="sectors">
+<article class="sector"><img src="photos/boutique.jpg" alt="Commerçant dans une boutique de produits"><div class="sectorLabel"><h3>Boutique et magasin</h3><p>Produits, prix et ventes.</p></div></article>
+<article class="sector"><img src="photos/restaurant.jpg" alt="Professionnelle travaillant dans un restaurant"><div class="sectorLabel"><h3>Restaurant</h3><p>Achats et ventes quotidiennes.</p></div></article>
+<article class="sector"><img src="photos/quincaillerie.jpg" alt="Employé dans une quincaillerie"><div class="sectorLabel"><h3>Quincaillerie</h3><p>Articles et mouvements de stock.</p></div></article>
+<article class="sector"><img src="photos/artisan.jpg" alt="Artisane dans son atelier de couture"><div class="sectorLabel"><h3>Atelier et artisan</h3><p>Fournitures et achats.</p></div></article>
+</div></div></section>
+<section class="section" id="avantages"><div class="wrap"><div class="why"><div class="whyPanel"><h2>Plus de contrôle sur votre activité.</h2><p>Vos informations réunies dans un seul outil.</p><ul class="plainList"><li>Connaître votre stock.</li><li>Suivre vos ventes.</li><li>Suivre vos dépenses.</li><li>Voir vos résultats rapidement.</li></ul></div><div class="whyText"><span class="kicker">StockNova, simplement</span><h2>Facile, même sans expérience informatique.</h2><p>Nous vous aidons à prendre le logiciel en main.</p><a class="btn blue" href="https://wa.me/2250554101873?text=Bonjour%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20StockNova." target="_blank" rel="noopener">Nous contacter sur WhatsApp</a></div></div><div class="benefits"><article class="benefit"><h3>Simple à utiliser</h3><p>Des menus simples et clairs.</p></article><article class="benefit"><h3>Gain de temps</h3><p>Tout au même endroit.</p></article><article class="benefit"><h3>Accompagnement</h3><p>Aide au démarrage.</p></article><article class="benefit"><h3>Pour les commerces locaux</h3><p>Pour les professionnels locaux.</p></article></div></div></section>
+<section class="section light" id="demarche"><div class="wrap"><div class="head"><span class="kicker">Commencer avec StockNova</span><h2>3 étapes</h2><p></p></div><div class="steps"><article class="step"><div class="stepNum">01</div><h3>Contactez-nous</h3><p>Contactez-nous.</p></article><article class="step"><div class="stepNum">02</div><h3>Découvrez StockNova</h3><p>Découvrez le logiciel en démo.</p></article><article class="step"><div class="stepNum">03</div><h3>Commencez à l'utiliser</h3><p>Choisissez votre offre et démarrez.</p></article></div></div></section>
+<section class="cta" id="contact"><div class="wrap"><div class="ctaBox"><div><h2>Prêt à mieux gérer votre commerce ?</h2><p>Démo, tarifs ou achat : contactez-nous.</p></div><a class="btn yellow" href="https://wa.me/2250554101873?text=Bonjour%2C%20je%20souhaite%20acheter%20StockNova%20ou%20demander%20une%20demonstration." target="_blank" rel="noopener">Demander une démo ou acheter</a></div></div></section>
+</main><footer class="footer"><div class="wrap footRow"><a class="logo" href="#accueil">Stock<span>Nova</span><span class="tagline">Gestion de Stock & Facturation</span></a><small>© StockNova · Côte d’Ivoire</small><small>Contact : +225 05 54 10 18 73</small></div></footer>
+<a class="floating" href="https://wa.me/2250554101873?text=Bonjour%2C%20je%20souhaite%20decouvrir%20StockNova." target="_blank" rel="noopener" aria-label="Contacter StockNova sur WhatsApp">Nous contacter sur WhatsApp</a>
+</body></html>
